@@ -19,10 +19,10 @@ if [ "$(whoami)" = "root" ]; then
 		exit 1
 	fi
 
-	#ln -s "$dest_dir/pamui/pamui.sh" /usr/local/bin/pamui
-	echo "#!/bin/bash">/usr/local/bin/pamui
-	echo "cd $dest_dir/pamui/">>/usr/local/bin/pamui
-	echo "source pamui.sh">>/usr/local/bin/pamui
+	ln -s "$dest_dir/pamui/pamui.sh" /usr/local/bin/pamui
+	#echo "#!/bin/bash">/usr/local/bin/pamui
+	#echo "cd $dest_dir/pamui/">>/usr/local/bin/pamui
+	#echo "source pamui.sh">>/usr/local/bin/pamui
 	chmod +x /usr/local/bin/pamui
 	
 	echo "Installation finished."
