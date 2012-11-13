@@ -16,12 +16,14 @@ else
 fi
 
 if [ $# -gt 0 ];then
-	if [ $# -gt 1 ];then
-		args=$2
-		for((i=3;i<$#;i++)); do
-			args="$args ${i}"
-		done
-	fi
+#	if [ $# -gt 1 ];then
+#		args=$2
+#		for((i=3;i<$#;i++)); do
+#			args="$args ${i}"
+#		done
+#	fi
+	num_args=$(($#-1))
+	args=${@:1:&num_args}
 		
 	case $1 in 
 	"search")

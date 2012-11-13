@@ -1,6 +1,6 @@
 #!/bin/bash
 source pamui_errors.sh
-supported_pmfs=( pacman yum apt-get )
+supported_pmfs=( yaourt pacman)
 
 echo_status_info(){
 	if [ $# -gt 0 ];then
