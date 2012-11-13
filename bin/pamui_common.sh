@@ -1,6 +1,6 @@
 #!/bin/bash
 source pamui_errors.sh
-supported_pmfs=( yaourt pacman)
+supported_pmfs=(pacman yaourt)
 
 echo_status_info(){
 	if [ $# -gt 0 ];then

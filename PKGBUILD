@@ -1,6 +1,6 @@
 # Maintainer: Luca Baldesi <baldo@lilik.it>
 pkgname=pamui
-pkgver=20120416
+pkgver=20121113
 pkgrel=1
 pkgdesc="Interface for packet managers"
 arch=('i686' 'x86_64')
