@@ -23,6 +23,17 @@ install_packages(){
 		err_few_parms;
 	fi
 }
+install_local_packages(){
+	if [ $# -gt 0 ];then
+		query=$1
+		for((i=2;i<$#;i++)); do
+			query="$query ${i}"
+		done
+		yaourt -U $query;
+	else
+		err_few_parms;
+	fi
+}
 remove_packages(){
 	if [ $# -gt 0 ];then
 		query=$1

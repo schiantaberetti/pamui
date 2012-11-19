@@ -12,6 +12,17 @@ search_package(){
 		err_few_parms;
 	fi
 }
+install_local_packages(){
+	if [ $# -gt 0 ];then
+		query=$1
+		for((i=2;i<$#;i++)); do
+			query="$query ${i}"
+		done
+		exec_as_root "pacman -U $query";
+	else
+		err_few_parms;
+	fi
+}
 install_packages(){
 	if [ $# -gt 0 ];then
 		query=$1
