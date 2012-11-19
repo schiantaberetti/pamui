@@ -49,7 +49,7 @@ update_db(){
 	yaourt -Syy
 }
 upgrade_packages(){
-	yaourt -Sua --noconfirm
+	NOENTER=1 yaourt -Syua --noconfirm
 }
 search_for_file(){
 	if [ $# -gt 0 ];then

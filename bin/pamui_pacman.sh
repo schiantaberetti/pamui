@@ -49,7 +49,7 @@ update_db(){
 	exec_as_root "pacman -Syy"
 }
 upgrade_packages(){
-	exec_as_root "pacman -Su"
+	exec_as_root "pacman -Syu"
 }
 search_for_file(){
 	if [ $# -gt 0 ];then
