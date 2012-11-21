@@ -3,55 +3,35 @@ source pamui_errors.sh
 source pamui_common.sh
 search_package(){
 	if [ $# -gt 0 ];then
-		query=$1
-		for((i=2;i<$#;i++)); do
-			query="$query ${i}"
-		done
-		pacman -Ss $query;
+		pacman -Ss $@;
 	else
 		err_few_parms;
 	fi
 }
 install_local_packages(){
 	if [ $# -gt 0 ];then
-		query=$1
-		for((i=2;i<$#;i++)); do
-			query="$query ${i}"
-		done
-		exec_as_root "pacman -U $query";
+		exec_as_root "pacman -U $@";
 	else
 		err_few_parms;
 	fi
 }
 install_packages(){
 	if [ $# -gt 0 ];then
-		query=$1
-		for((i=2;i<$#;i++)); do
-			query="$query ${i}"
-		done
-		exec_as_root "pacman -S $query";
+		exec_as_root "pacman -S $@";
 	else
 		err_few_parms;
 	fi
 }
 remove_packages(){
 	if [ $# -gt 0 ];then
-		query=$1
-		for((i=2;i<$#;i++)); do
-			query="$query ${i}"
-		done
-		exec_as_root "pacman -R $query";
+		exec_as_root "pacman -R $@";
 	else
 		err_few_parms;
 	fi
 }
 purge_packages(){
 	if [ $# -gt 0 ];then
-		query=$1
-		for((i=2;i<$#;i++)); do
-			query="$query ${i}"
-		done
-		exec_as_root "pacman -R --nosave $query";
+		exec_as_root "pacman -R --nosave $@";
 	else
 		err_few_parms;
 	fi
@@ -64,7 +44,7 @@ upgrade_packages(){
 }
 search_for_file(){
 	if [ $# -gt 0 ];then
-		pacman -Qo $1;
+		pacman -Qo $@;
 	else
 		err_few_parms;
 	fi

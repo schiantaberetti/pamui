@@ -16,12 +16,6 @@ else
 fi
 
 if [ $# -gt 0 ];then
-#	if [ $# -gt 1 ];then
-#		args=$2
-#		for((i=3;i<$#;i++)); do
-#			args="$args ${i}"
-#		done
-#	fi
 	num_args=$(($#))
 	args=${@:2:$num_args}
 	

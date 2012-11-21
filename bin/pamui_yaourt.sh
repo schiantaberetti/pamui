@@ -3,55 +3,35 @@ source pamui_errors.sh
 source pamui_common.sh
 search_package(){
 	if [ $# -gt 0 ];then
-		query=$1
-		for((i=2;i<$#;i++)); do
-			query="$query ${i}"
-		done
-		yaourt -Ss $query;
+		yaourt -Ss $@;
 	else
 		err_few_parms;
 	fi
 }
 install_packages(){
 	if [ $# -gt 0 ];then
-		query=$1
-		for((i=2;i<$#;i++)); do
-			query="$query ${i}"
-		done
-		yaourt -S $query;
+		yaourt -S $@;
 	else
 		err_few_parms;
 	fi
 }
 install_local_packages(){
 	if [ $# -gt 0 ];then
-		query=$1
-		for((i=2;i<$#;i++)); do
-			query="$query ${i}"
-		done
-		yaourt -U $query;
+		yaourt -U $@;
 	else
 		err_few_parms;
 	fi
 }
 remove_packages(){
 	if [ $# -gt 0 ];then
-		query=$1
-		for((i=2;i<$#;i++)); do
-			query="$query ${i}"
-		done
-		yaourt -R $query;
+		yaourt -R $@;
 	else
 		err_few_parms;
 	fi
 }
 purge_packages(){
 	if [ $# -gt 0 ];then
-		query=$1
-		for((i=2;i<$#;i++)); do
-			query="$query ${i}"
-		done
-		yaourt -R --nosave $query;
+		yaourt -R --nosave $@;
 	else
 		err_few_parms;
 	fi
@@ -64,7 +44,7 @@ upgrade_packages(){
 }
 search_for_file(){
 	if [ $# -gt 0 ];then
-		yaourt -Qo $1;
+		yaourt -Qo $@;
 	else
 		err_few_parms;
 	fi

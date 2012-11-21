@@ -3,48 +3,48 @@ source pamui_errors.sh
 source pamui_common.sh
 search_package(){
 	if [ $# -gt 0 ];then
-		apt-cache search $@;
-	else
-		err_few_parms;
-	fi
-}
-install_local_packages(){
-	if [ $# -gt 0 ];then
-		exec_as_root "dpkg -i $@";
+		err_not_yet_implemented;
 	else
 		err_few_parms;
 	fi
 }
 install_packages(){
 	if [ $# -gt 0 ];then
-		exec_as_root "apt-get install $@";
+		err_not_yet_implemented;
+	else
+		err_few_parms;
+	fi
+}
+install_local_packages(){
+	if [ $# -gt 0 ];then
+		err_not_yet_implemented;
 	else
 		err_few_parms;
 	fi
 }
 remove_packages(){
 	if [ $# -gt 0 ];then
-		exec_as_root "apt-get remove $@";
+		err_not_yet_implemented;
 	else
 		err_few_parms;
 	fi
 }
 purge_packages(){
 	if [ $# -gt 0 ];then
-		exec_as_root "apt-get --purge remove $@";
+		err_not_yet_implemented;
 	else
 		err_few_parms;
 	fi
 }
 update_db(){
-	exec_as_root "apt-get update"
+	err_not_yet_implemented;
 }
 upgrade_packages(){
-	exec_as_root "apt-get upgrade"
+	err_not_yet_implemented;
 }
 search_for_file(){
 	if [ $# -gt 0 ];then
-		apt-file search $@;
+		err_not_yet_implemented;
 	else
 		err_few_parms;
 	fi
