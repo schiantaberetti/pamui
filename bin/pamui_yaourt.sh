@@ -51,7 +51,7 @@ search_for_file(){
 }
 get_source() {
 	if [ $# -gt 0 ];then
-		SRC_DIR='~'
+		SRC_DIR=~
 		cd $SRC_DIR
 		yaourt -G $@
 		makepkg

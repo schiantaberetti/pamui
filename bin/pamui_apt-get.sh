@@ -50,7 +50,7 @@ search_for_file(){
 	fi
 }
 get_source(){
-	SRC_DIR='~'
+	SRC_DIR=~
 	if [ $# -gt 0 ];then
 		cd $SRC_DIR;
 		apt-get source $@;
