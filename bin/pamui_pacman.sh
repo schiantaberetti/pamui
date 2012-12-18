@@ -3,7 +3,7 @@ source pamui_errors.sh
 source pamui_common.sh
 search_package(){
 	if [ $# -gt 0 ];then
-		pacman -Ss $@;
+		pacman -Ss $@ | less;
 	else
 		err_few_parms;
 	fi
@@ -49,5 +49,7 @@ search_for_file(){
 		err_few_parms;
 	fi
 }
-
+get_source() {
+	echo_status_info "This feature is not implemented yet :("
+}
 

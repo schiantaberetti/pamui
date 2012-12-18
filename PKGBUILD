@@ -1,6 +1,6 @@
 # Maintainer: Luca Baldesi <baldo@lilik.it>
 pkgname=pamui
-pkgver=20121119
+pkgver=20121212
 pkgrel=1
 pkgdesc="Interface for packet managers"
 arch=('i686' 'x86_64')
@@ -8,7 +8,7 @@ url=""
 license=('GPL')
 groups=()
 depends=()
-makedepends=('git')
+makedepends=('git','less')
 provides=()
 conflicts=()
 replaces=()

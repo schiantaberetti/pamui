@@ -3,7 +3,7 @@
 #pmf = packet manager frontend
 source pamui_common.sh
 usage(){
-echo -e "Usage:\npamui [help|install|purge|remove|search|search_file|update|upgrade|install_local] args"
+echo -e "Usage:\npamui [help|install|purge|remove|search|search_file|update|upgrade|install_local|source] args"
 }
 
 PMF=$(detect_pmf)
@@ -28,6 +28,9 @@ if [ $# -gt 0 ];then
 	;;
 	"install_local")
 		install_local_packages $args
+	;;
+	"source")
+		get_source $args
 	;;
 	"purge")
 		purge_packages $args	

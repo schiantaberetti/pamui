@@ -3,7 +3,7 @@ source pamui_errors.sh
 source pamui_common.sh
 search_package(){
 	if [ $# -gt 0 ];then
-		yaourt -Ss $@;
+		yaourt --color -Ss $@ | less;
 	else
 		err_few_parms;
 	fi
@@ -45,6 +45,17 @@ upgrade_packages(){
 search_for_file(){
 	if [ $# -gt 0 ];then
 		yaourt -Qo $@;
+	else
+		err_few_parms;
+	fi
+}
+get_source() {
+	if [ $# -gt 0 ];then
+		SRC_DIR='~'
+		cd $SRC_DIR
+		yaourt -G $@
+		makepkg
+		echo_status_info "Source downloaded in $SRC_DIR"
 	else
 		err_few_parms;
 	fi

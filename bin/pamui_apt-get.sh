@@ -3,7 +3,7 @@ source pamui_errors.sh
 source pamui_common.sh
 search_package(){
 	if [ $# -gt 0 ];then
-		apt-cache search $@;
+		apt-cache search $@ | less;
 	else
 		err_few_parms;
 	fi
@@ -45,6 +45,16 @@ upgrade_packages(){
 search_for_file(){
 	if [ $# -gt 0 ];then
 		apt-file search $@;
+	else
+		err_few_parms;
+	fi
+}
+get_source(){
+	SRC_DIR='~'
+	if [ $# -gt 0 ];then
+		cd $SRC_DIR;
+		apt-get source $@;
+		echo_status_info "Source code has been downloaded in $SRC_DIR."
 	else
 		err_few_parms;
 	fi
