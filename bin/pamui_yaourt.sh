@@ -3,7 +3,7 @@ source pamui_errors.sh
 source pamui_common.sh
 search_package(){
 	if [ $# -gt 0 ];then
-		yaourt --color -Ss $@ | less;
+		yaourt --color -Ss $@ | less -r;
 	else
 		err_few_parms;
 	fi
