@@ -54,8 +54,20 @@ get_source() {
 		SRC_DIR=~
 		cd $SRC_DIR
 		yaourt -G $@
-		makepkg
-		echo_status_info "Source downloaded in $SRC_DIR"
+		for pkg in "$@"; do
+			if [ -d $pkg ]; then
+				cd $pkg
+				makepkg --nobuild
+				if [ $? -eq 0 ];then
+					echo_status_info "Source downloaded in $SRC_DIR/$pkg"
+				else
+					echo_status_info "Error with the source code."
+				fi
+				cd $SRC_DIR
+			else
+				echo_status_info "Packet not found.."
+			fi
+		done
 	else
 		err_few_parms;
 	fi
